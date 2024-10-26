@@ -1,22 +1,27 @@
 package com.srizan.cruiseman
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.srizan.cruiseman.ui.CruiseManComposeApp
+import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.viewinterop.AndroidViewBinding
+import com.srizan.cruiseman.databinding.ContentMainBinding
 import org.koin.compose.KoinContext
 
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContent {
-            KoinContext {
-                CruiseManComposeApp()
+        setContentView(
+            ComposeView(this).apply {
+                setContent {
+                    KoinContext {
+                        AndroidViewBinding(ContentMainBinding::inflate)
+                    }
+                }
             }
-        }
+        )
     }
 }
 

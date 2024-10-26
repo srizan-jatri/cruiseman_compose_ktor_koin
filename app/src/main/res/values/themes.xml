@@ -2,4 +2,10 @@
 <resources>
 
     <style name="Theme.CruiseManComposeKtorKoin" parent="android:Theme.Material.Light.NoActionBar" />
+
+
+    <style name="Theme.CruiseManComposeKtorKoin.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 </resources>
