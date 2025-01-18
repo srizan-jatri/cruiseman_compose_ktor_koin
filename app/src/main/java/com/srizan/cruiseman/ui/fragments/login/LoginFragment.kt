@@ -21,8 +21,10 @@ import com.srizan.cruiseman.ui.screens.login.LoginUiState
 import com.srizan.cruiseman.ui.screens.login.LoginViewModel
 import com.srizan.cruiseman.ui.theme.CruiseManComposeKtorKoinTheme
 import org.koin.compose.viewmodel.koinNavViewModel
+import org.koin.core.annotation.KoinExperimentalAPI
 
 class LoginFragment : Fragment() {
+    @OptIn(KoinExperimentalAPI::class)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

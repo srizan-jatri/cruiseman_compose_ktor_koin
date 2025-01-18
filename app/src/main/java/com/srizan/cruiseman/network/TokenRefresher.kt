@@ -9,10 +9,11 @@ import io.ktor.client.call.body
 import io.ktor.client.plugins.auth.providers.BearerTokens
 import io.ktor.client.request.forms.submitForm
 import io.ktor.http.parameters
+import org.koin.core.annotation.Provided
 import org.koin.core.annotation.Single
 
 @Single
-class TokenRefresher(val client: HttpClient) {
+class TokenRefresher(@Provided val client: HttpClient) {
     suspend fun refresh(): BearerTokens {
 
         val response = client.submitForm(

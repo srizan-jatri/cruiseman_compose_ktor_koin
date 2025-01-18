@@ -10,9 +10,10 @@ import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import org.koin.android.annotation.KoinViewModel
+import org.koin.core.annotation.Provided
 
 @KoinViewModel
-class LoginViewModel(private val authenticationService: AuthenticationService) : ViewModel() {
+class LoginViewModel(@Provided private val authenticationService: AuthenticationService) : ViewModel() {
 
     val uiState = mutableStateOf<LoginUiState>(LoginUiState.Idle)
 

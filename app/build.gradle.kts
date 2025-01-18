@@ -8,12 +8,12 @@ plugins {
 
 android {
     namespace = "com.srizan.cruiseman"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.srizan.cruiseman"
         minSdk = 21
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -29,13 +29,7 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
+
     buildFeatures {
         compose = true
         viewBinding = true
@@ -88,8 +82,13 @@ dependencies {
 
     implementation(libs.kotlinx.serialization.json)
 }
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
 
 ksp {
-    //arg("KOIN_CONFIG_CHECK", "true")
+    arg("KOIN_CONFIG_CHECK", "true")
     arg("KOIN_USE_COMPOSE_VIEWMODEL", "true")
 }

@@ -16,8 +16,10 @@ import com.srizan.cruiseman.ui.screens.splash.SplashUiEvent
 import com.srizan.cruiseman.ui.screens.splash.SplashViewModel
 import com.srizan.cruiseman.ui.theme.CruiseManComposeKtorKoinTheme
 import org.koin.compose.viewmodel.koinNavViewModel
+import org.koin.core.annotation.KoinExperimentalAPI
 
 class SplashFragment : Fragment() {
+    @OptIn(KoinExperimentalAPI::class)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

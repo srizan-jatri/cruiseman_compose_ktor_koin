@@ -22,8 +22,10 @@ import com.srizan.cruiseman.ui.screens.profile.ProfileUiState
 import com.srizan.cruiseman.ui.screens.profile.ProfileViewModel
 import com.srizan.cruiseman.ui.theme.CruiseManComposeKtorKoinTheme
 import org.koin.compose.viewmodel.koinNavViewModel
+import org.koin.core.annotation.KoinExperimentalAPI
 
 class ProfileFragment : Fragment() {
+    @OptIn(KoinExperimentalAPI::class)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

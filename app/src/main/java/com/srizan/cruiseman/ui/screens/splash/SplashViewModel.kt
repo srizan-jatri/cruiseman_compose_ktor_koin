@@ -11,10 +11,11 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import org.koin.android.annotation.KoinViewModel
+import org.koin.core.annotation.Provided
 
 @KoinViewModel
 class SplashViewModel(
-    private val authenticationService: AuthenticationService
+    @Provided private val authenticationService: AuthenticationService
 ) : ViewModel() {
 
     val state = mutableStateOf<SplashUiState>(SplashUiState.Loading)
